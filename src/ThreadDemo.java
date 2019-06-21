@@ -1,15 +1,13 @@
-//RunnableDemo类 继承Runnable接口
-public class RunnableDemo implements Runnable {
+//继承Thread类 ，其实也是相当于继承了runnable接口
+public class ThreadDemo extends Thread {
     private Thread t;
     private String threadName;
 
-    //构造函数
-    RunnableDemo( String name) {
+    ThreadDemo( String name) {
         threadName = name;
         System.out.println("Creating " +  threadName );
     }
 
-    //重写Run
     public void run() {
         System.out.println("Running " +  threadName );
         try {
@@ -24,7 +22,6 @@ public class RunnableDemo implements Runnable {
         System.out.println("Thread " +  threadName + " exiting.");
     }
 
-    //重写start,加上打印信息，为了对比
     public void start () {
         System.out.println("Starting " +  threadName );
         if (t == null) {
@@ -33,5 +30,3 @@ public class RunnableDemo implements Runnable {
         }
     }
 }
-
-
