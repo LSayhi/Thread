@@ -35,6 +35,15 @@
 
 10.读锁、写锁
 
+读写锁，private ReentrantReadWriteLock rwl = new ReentrantReadWriteLock(),可以从这个锁中分离出读锁和写锁，分别加到不同的方法上。<br>
+- 读锁：private Lock readLock = rwl.readLock();<br>
+- 写锁：private Lock writeLock = rwl.writeLock();<br>
+然后这两个锁可以分别给不同的方法加上，方法与普通加锁一样，名字替换一下就行。<br>
+
+11.弃用stop和suspend
+stop方法天生是不安全的，因此被弃用；suspend方法容易导致死锁，所以也不用了。<br>
+
+12.阻塞队列
 
 **参考资料：**<br>
 《Java核心技术卷1》<br>
