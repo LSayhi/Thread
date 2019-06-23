@@ -40,10 +40,20 @@
 - 写锁：private Lock writeLock = rwl.writeLock();<br>
 然后这两个锁可以分别给不同的方法加上，方法与普通加锁一样，名字替换一下就行。<br>
 
-11.弃用stop和suspend
+11.弃用stop和suspend<br>
 stop方法天生是不安全的，因此被弃用；suspend方法容易导致死锁，所以也不用了。<br>
 
 12.阻塞队列
+
+- 对于多线程问题，可以用一个或多个队列优雅且安全地形式化,有生产者向队列插入元素，消费者从队列取出。<br>
+- 阻塞队列有许多方法，add,element,offer,peek,poll,put,remove,take等，常用offer,poll,peek因为不引发异常<br>
+- Java并发包里有许多队列，分别实现了不同的功能。<br>
+- 阻塞队列: ArrayBlockingQueue, LinkedBlockingQueue, LinkedBlockingDeque, DelayQueue, PriorityBlockingQueue, BlockingQueue, BlockingDeque,Transfer Queue
+ 
+13.线程安全的集合
+
+除了阻塞队列外，Java并发包提供了另外一些线程安全的集合，其中就包括ConcurrentHashMap,ConcurrentSkipListMap,ConcurrentSkipListSet,ConcurrentLinkedQueue。<br>
+
 
 **参考资料：**<br>
 《Java核心技术卷1》<br>
