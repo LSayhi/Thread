@@ -54,6 +54,8 @@ stop方法天生是不安全的，因此被弃用；suspend方法容易导致死
 
 除了阻塞队列外，Java并发包提供了另外一些线程安全的集合，其中就包括ConcurrentHashMap,ConcurrentSkipListMap,ConcurrentSkipListSet,ConcurrentLinkedQueue。<br>
 
+14.线程池
+
 
 **参考资料：**<br>
 《Java核心技术卷1》<br>
